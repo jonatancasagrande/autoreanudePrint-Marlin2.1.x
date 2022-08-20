@@ -8,34 +8,4 @@ Solución: para dar con la misma inicialmente se buscó la porción de código d
 
 El fichero powerloss.cpp está ubicado dentro de Marlin/src/feature/powerloss.cpp
 
-<code>
-/**
- * Check for Print Job Recovery during setup()
- *
- * If a saved state exists send 'M1000 S' to initiate job recovery.
- */
- 
-bool PrintJobRecovery::check() {
-  //if (!card.isMounted()) card.mount();
-  //gcode.process_subcommands_now("");
-      bool success = false;
-      if (card.isMounted()) {
-        load();
-        success = valid();
-        if (!success)
-          cancel();
-        else
-          
-          if(card.fileExists("CONT"))
-          {
-            queue.inject_P(PSTR("M1000"));
-          }
-          else
-          {
-             queue.inject_P(PSTR("M1000S"));
-          }
-      }
-      return success;       
-  
-}
-</code>
+
