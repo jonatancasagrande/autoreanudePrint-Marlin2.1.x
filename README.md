@@ -8,6 +8,7 @@ Solución: para dar con la misma inicialmente se buscó la porción de código d
 
 El fichero powerloss.cpp está ubicado dentro de Marlin/src/feature/powerloss.cpp
 
+<code>
 /**
  * Check for Print Job Recovery during setup()
  *
@@ -37,3 +38,4 @@ bool PrintJobRecovery::check() {
       return success;       
   
 }
+</code>
